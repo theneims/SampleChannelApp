@@ -1,0 +1,12 @@
+<div>
+  Id: {{id}}
+</div>
+<div>
+  Number: {{number}}
+</div>
+<div>
+  State: {{getInteractionStateAsString(interaction.state)}}
+</div>
+<button *ngIf="getInteractionStateAsString(interaction.state) === 'Alerting'" (click)="answerCall()">Answer Call</button>
+<button *ngIf="getInteractionStateAsString(interaction.state) === 'Connected'" (click)="endCall()">End Call</button>
+<button *ngIf="getInteractionStateAsString(interaction.state) === 'Disconnected'" (click)="removeCall()">Remove Call</button>

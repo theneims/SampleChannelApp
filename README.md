@@ -1,6 +1,10 @@
 # SampleChannelApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
+This project is a sample of using (DaVinci API)[https://apidocs.contactcanvas.com/] to integrate a channel into the (DaVinci Platform)[https://www.contactcanvas.com/]. This project was original generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0. 
+
+This project generates fake calls to a list of phone number and passes the information to the DaVinci api. The important files are (app.component.ts)[src/app/app.component.ts] and (call.component.ts)[src/app/call/call.component.ts].
+
+To test run the project with `ng serve` then in (Creators Studio)[https://studio.contactcanvas.com] create an app with the URL pointing to you local server(http://localhost:4200/ by default) and the position set to 'Center(tabs)'.
 
 ## Development server
 
