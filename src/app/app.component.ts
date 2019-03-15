@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
-import { initializeComplete, InteractionStates, setAppHeight } from '@amc-technology/davinci-api';
+import { initializeComplete, InteractionStates, setAppHeight, SearchRecords, registerClickToDial } from '@amc-technology/davinci-api';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +20,7 @@ export class AppComponent implements OnInit, AfterViewChecked {
 
   ngOnInit() {
     initializeComplete();
+    registerClickToDial(this.callSpecific);
   }
 
   ngAfterViewChecked() {
@@ -41,5 +42,11 @@ export class AppComponent implements OnInit, AfterViewChecked {
 
   removeCall(id: string) {
     this.calls = this.calls.filter(call => call.id !== id);
+  }
+  async callSpecific(phone: string) {
+    this.calls = [... this.calls, {
+      id: `Call-${Math.random()}`,
+      number: phone
+    }];
   }
 }
