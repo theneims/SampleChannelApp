@@ -29,3 +29,25 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Running Sample Channel App locally: 
+
+* Open a terminal window and navigate inside the folder that contains the Sample Channel App and enter these commands. 
+
+* cd SampleChannelApp/ 
+
+* ng serve -o 
+
+* The Sample Channel App will run on localhost:4200 
+
+
+## Creating the Applications in Studio 
+
+* Open the creators studio (https://studio.contactcanvas.com) and navigate to the Edit Apps Section 
+
+* Create a new app with the name “SampleChannelApp” 
+
+* Navigate to the configurations of the app you just created and enter the url configuration as (localhost:4200) 
+
+
