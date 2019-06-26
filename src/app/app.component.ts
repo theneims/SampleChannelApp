@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   initializeComplete,
   InteractionStates,
@@ -29,12 +29,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     initializeComplete();
     registerClickToDial(this.callSpecific);
-    setAppHeight(200); // This fixes the issue with ngAfterViewChecked()
+    setAppHeight(200);
   }
-
-  // ngAfterViewChecked() {
-  //   setAppHeight(document.body.clientHeight);
-  // } // This breaks the entire page
 
   newCall() {
     this.calls = [
