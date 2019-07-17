@@ -1,5 +1,11 @@
-<button (click)="newCall()">Create new call</button>
+<button *ngIf="presence === 'Ready'" (click)="newCall()">
+  Create new call
+</button>
 
 <ng-container *ngFor="let call of calls">
-  <app-call [id]="call.id" [number]="call.number" (callEnd)="removeCall(call.id)"></app-call>
+  <app-call
+    [id]="call.id"
+    [number]="call.number"
+    (callEnd)="dropCall(call.id)"
+  ></app-call>
 </ng-container>

@@ -1,13 +1,36 @@
-<div>
-  Id: {{id}}
+<div>Id: {{ id }}</div>
+<div>Number: {{ number }}</div>
+<div>State: {{ getInteractionStateAsString(interaction.state) }}</div>
+<div>Call Time: {{ this.formatTimer(this.currentTime) }}</div>
+<div
+  *ngIf="
+    getInteractionStateAsString(interaction.state) === 'OnHold' ||
+    this.holdTimes.length > 0
+  "
+>
+  Hold Time: {{ this.formatTimer(this.currentHoldTime) }}
 </div>
-<div>
-  Number: {{number}}
-</div>
-<div>
-  State: {{getInteractionStateAsString(interaction.state)}}
-</div>
-<button *ngIf="getInteractionStateAsString(interaction.state) === 'Alerting'" (click)="answerCall()">Answer Call</button>
-<button *ngIf="getInteractionStateAsString(interaction.state) === 'Connected'" (click)="endCall()">End Call</button>
-<button *ngIf="getInteractionStateAsString(interaction.state) === 'Connected'" (click)="holdCall()">Hold Call</button>
-<button *ngIf="getInteractionStateAsString(interaction.state) === 'OnHold'" (click)="unholdCall()">Unhold Call</button>
+<button
+  *ngIf="getInteractionStateAsString(interaction.state) === 'Alerting'"
+  (click)="answerCall()"
+>
+  Answer Call
+</button>
+<button
+  *ngIf="getInteractionStateAsString(interaction.state) === 'Connected'"
+  (click)="endCall()"
+>
+  End Call
+</button>
+<button
+  *ngIf="getInteractionStateAsString(interaction.state) === 'Connected'"
+  (click)="holdCall()"
+>
+  Hold Call
+</button>
+<button
+  *ngIf="getInteractionStateAsString(interaction.state) === 'OnHold'"
+  (click)="unholdCall()"
+>
+  Unhold Call
+</button>
